@@ -4,7 +4,7 @@ require 'rack/test'
 
 set :environment, :test
 
-describe 'Server Service' do
+describe 'Cladding App test suite' do
   include Rack::Test::Methods
 
   def app
