@@ -29,11 +29,11 @@ GEM
     tilt (2.0.11)
 
 PLATFORMS
-  arm64-darwin-22
+  ruby
 
 DEPENDENCIES
   rspec (~> 3.12)
   sinatra (~> 3.0)
 
 BUNDLED WITH
-   2.3.26
+   1.17.2
