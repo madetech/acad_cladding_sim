@@ -14,7 +14,8 @@ def tall_building_toid_finder(left_bottom_coordinates, top_right_coordinates)
     
     response = http.request(request)
     parsed_json = JSON.parse(response.body)
-    
+    toid = parsed_json["features"][0]["properties"]["toid"]
+    puts toid
     #puts parsed_json
     #returned_toids = hash["features"][0][5]
     #puts returned_toids
