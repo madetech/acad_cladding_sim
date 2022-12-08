@@ -4,7 +4,7 @@ require 'openssl'
 
 
 def tall_building_toid_finder(left_bottom_coordinates, top_right_coordinates)
-    url = URI("https://api.os.uk/features/ngd/ofa/v1/collections/bld-fts-buildingpart/items?bbox=3.545237,50.727083,-3.538381,50.728095&key=CkhkKSjbQD0FoWPnevbA2vdfsBAe1rv8")
+    url = URI("https://api.os.uk/features/ngd/ofa/v1/collections/bld-fts-buildingpart/items?bbox=3.545237,50.727083,-3.538381,50.728095&filter=absoluteheightmaximum%20%3E%2018.0&key=CkhkKSjbQD0FoWPnevbA2vdfsBAe1rv8")
 
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
