@@ -1,9 +1,11 @@
 require 'sinatra'
 
+configure do
+    set :views, "views"
+    set :public_dir, "public"
+end
 get '/' do
     erb :index
-
-    root 'render#index'
 end
 
 get '/result' do
