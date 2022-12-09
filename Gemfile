@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 # gem "rails"
 
-ruby File.read('.ruby_version').strip
+ruby File.read('./.ruby_version').strip
 
 gem "rspec", "~> 3.12"
 
