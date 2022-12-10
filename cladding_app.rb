@@ -5,6 +5,7 @@ configure do
     set :public_dir, "public"
     set :bind, '0.0.0.0'
     set :port, 10000
+    set :environment, :production
 end
 get '/' do
     erb :index
