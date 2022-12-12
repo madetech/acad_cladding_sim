@@ -1,3 +1,3 @@
-def properties_in_area(left_bottom_coordinates, top_right_coordinates)
-  ["123456789012", "098765432112"]
+def uprn_finder()
+  ["100062426862"]
 end
