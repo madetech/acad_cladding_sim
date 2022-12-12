@@ -17,6 +17,6 @@ def uprn_finder(left_bottom_coordinates, top_right_coordinates)
   
   response = http.request(request)
   parsed_json = JSON.parse(response.body)
-  uprn = parsed_json["linkedIdentifiers"][0]["correlations"][0]["correlatedIdentifiers"][0]["identifier"]
-  puts uprn
+  list_of_uprns = parsed_json["linkedIdentifiers"][0]["correlations"][0]["correlatedIdentifiers"][0]["identifier"]
+ 
 end
