@@ -1,6 +1,7 @@
 require 'uri'
 require 'net/http'
 require 'openssl'
+require 'JSON'
 
 
 def tall_building_toid_finder(left_bottom_coordinates, top_right_coordinates)

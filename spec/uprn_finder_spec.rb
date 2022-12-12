@@ -1,4 +1,4 @@
-require_relative '../Back_end/uprn_finder.rb'
+require_relative '../app/controllers/uprn_finder.rb'
 
 describe "UPRN for all properties in area" do
   it 'returns the first UPRN of a building in a given area' do

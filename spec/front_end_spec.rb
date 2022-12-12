@@ -1,4 +1,4 @@
-require_relative '../cladding_app.rb'
+require_relative '../app.rb'
 require 'rspec'
 require 'rack/test'
 

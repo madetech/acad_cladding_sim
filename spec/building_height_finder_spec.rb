@@ -1,4 +1,4 @@
-require_relative '../Back_end/building_height_finder.rb'
+require_relative '../app/controllers/building_height_finder.rb'
 
 describe 'Heights for all properties over 18m in the area ' do
     it 'returns the first building with height over 18m in an area' do

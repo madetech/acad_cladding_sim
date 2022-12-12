@@ -1,4 +1,4 @@
-require_relative '../Back_end/toid_from_ngd_api.rb'
+require_relative '../app/controllers/toid_from_ngd_api.rb'
 
 describe 'toid for all properties over 18m in the area ' do
     it 'returns the toid osgb1000013035594 of a building over 18m in given area' do
