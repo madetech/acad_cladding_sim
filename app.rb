@@ -1,4 +1,5 @@
 require 'sinatra'
+require_relative 'app/controllers/uprn_finder.rb'
 
 configure do
     set :views, "./app/views"
@@ -12,5 +13,5 @@ get '/' do
 end
 
 get '/result' do
-    erb :result
+    erb :result, {locals: { uprn_list: uprn_finder([0.0085, 51.564], [0.1166, 51.6314])}}
 end
