@@ -70,41 +70,14 @@
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Unique Property Reference Number</th>
-      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Building Height/metres</th>
-      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Address</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
+  <%uprn_list.each do |uprn|%>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"><%=uprn_list%></th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">18.05</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">63 Caistor Close</td>
+      <th scope="row" class="govuk-table__header"><%=uprn%></th>
     </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">YYY123456788</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">19.56</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">27 Arkham Road</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">JJJ676543212</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">24.35</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">76545 Selfie Street</td>
-    </tr>
-       <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">XXX123456789</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">18.05</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">63 Caistor Close</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">YYY123456788</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">19.56</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">27 Arkham Road</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">JJJ676543212</th>
-      <td class="govuk-table__cell govuk-table__cell--numeric">24.35</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">76545 Selfie Street</td>
-    </tr>
+  <%end%>
   </tbody>
 </table>
     </main>
