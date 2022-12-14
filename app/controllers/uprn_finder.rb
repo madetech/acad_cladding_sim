@@ -2,7 +2,7 @@ require_relative './toid_from_ngd_api.rb'
 require 'uri'
 require 'net/http'
 require 'openssl'
-require 'JSON'
+require 'json'
 
 # Return the UPRN of buildings using the OS Linked Identifiers API
 def uprn_finder(left_bottom_coordinates, top_right_coordinates)

@@ -1,7 +1,7 @@
 require 'uri'
 require 'net/http'
 require 'openssl'
-require 'JSON'
+require 'json'
 
 # Return the TOID of buildings over 18m using the OS NGD API
 def tall_building_toid_finder(left_bottom_coordinates, top_right_coordinates)
