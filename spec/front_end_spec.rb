@@ -13,7 +13,6 @@ describe 'Cladding App test suite' do
 
   it "should load the home page" do
     get '/'
-    puts last_response
     expect(last_response).to be_ok
   end
 
