@@ -27,6 +27,7 @@ def uprn_finder(left_bottom_coordinates, top_right_coordinates)
       next
     end
     list_of_uprns.append(uprn)
+    sleep 3
   end
   list_of_uprns
 end
