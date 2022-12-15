@@ -20,8 +20,12 @@ def uprn_finder(left_bottom_coordinates, top_right_coordinates)
     response = http.request(request)
 
     parsed_json = JSON.parse(response.body)
-    
-    uprn = parsed_json["linkedIdentifiers"][0]["correlations"][0]["correlatedIdentifiers"][0]["identifier"]
+    begin
+      uprn = parsed_json["linkedIdentifiers"][0]["correlations"][0]["correlatedIdentifiers"][0]["identifier"]
+    rescue NoMethodError
+      list_of_uprns.append("UPRN not available")
+      next
+    end
     list_of_uprns.append(uprn)
   end
   list_of_uprns
