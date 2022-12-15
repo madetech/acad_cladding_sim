@@ -72,18 +72,18 @@
       <th scope="col" class="govuk-table__header">UPRN</th>
       <th scope="col" class="govuk-table__header">TOID</th>
       <th scope="col" class="govuk-table__header">Residential Status</th>
-      <th scope="col" class="govuk-table__header">Height</th>
+      <th scope="col" class="govuk-table__header">Height/m</th>
       <th scope="col" class="govuk-table__header">Address</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
   <%uprn_list.each do |uprn|%>
       <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><%=uprn[0]%></th>
-        <th scope="row" class="govuk-table__header"><%=uprn[1][0]%></th>
-        <th scope="row" class="govuk-table__cell"><%=uprn[1][1]%></th>
-        <th scope="row" class="govuk-table__cell"><%=uprn[1][2]%></th>
-        <th scope="row" class="govuk-table__cell">pending</th>
+        <th scope="col" class="govuk-table__header"><%=uprn[0]%></th>
+        <th scope="col" class="govuk-table__cell"><%=uprn[1][0]%></th>
+        <th scope="col" class="govuk-table__cell"><%=uprn[1][1]%></th>
+        <th scope="col" class="govuk-table__cell"><%=uprn[1][2]%></th>
+        <th scope="col" class="govuk-table__cell">pending</th>
       </tr>
   <%end%>
   </tbody>
