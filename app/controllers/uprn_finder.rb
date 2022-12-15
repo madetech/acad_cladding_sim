@@ -12,7 +12,7 @@ def uprn_finder(left_bottom_coordinates, top_right_coordinates)
   
   # Calls the OS Linked Identifier API on each TOID
   list_of_toids.each do |toid|
-    url = URI("https://api.os.uk/search/links/v1/identifiers/#{toid}?key=uC1mK51yDRfOQsisddsA9y885V0pAfxn")
+    url = URI("https://api.os.uk/search/links/v1/identifiers/#{toid[0]}?key=uC1mK51yDRfOQsisddsA9y885V0pAfxn")
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
     request = Net::HTTP::Get.new(url)
@@ -23,11 +23,11 @@ def uprn_finder(left_bottom_coordinates, top_right_coordinates)
     begin
       uprn = parsed_json["linkedIdentifiers"][0]["correlations"][0]["correlatedIdentifiers"][0]["identifier"]
     rescue NoMethodError
-      list_of_uprns.append("UPRN not available")
+      list_of_uprns.append(["UPRN not available", toid])
       next
     end
-    list_of_uprns.append(uprn)
-    sleep 3
+    list_of_uprns.append([uprn, toid])
+    # sleep 3
   end
   list_of_uprns
 end
