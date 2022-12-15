@@ -17,17 +17,17 @@
   <link rel="apple-touch-icon" href="/assets/images/govuk-apple-touch-icon.png">
 
   <!--[if !IE 8]><!-->
-  <link href="/govuk-frontend/govuk/all.css" rel="stylesheet">
+  <link href="/govuk-frontend-4.4.0.min.css" rel="stylesheet">
   <!--<![endif]-->
 
   <!--[if IE 8]>
-    <link href="/govuk-frontend/all-ie8.css" rel="stylesheet">
+    <link href="/govuk-frontend-ie8-4.4.0.min.css" rel="stylesheet">
   <![endif]-->
 
   <!--[if lt IE 9]>
     <script src="/html5-shiv/html5shiv.js"></script>
   <![endif]-->
-<link href="<%= url('/all.css') %>" rel="stylesheet" >
+<link href="<%= url('/govuk-frontend-4.4.0.min.css') %>" rel="stylesheet" >
 
 
 </head>
@@ -65,18 +65,15 @@
   <div class="govuk-width-container ">
     <main class="govuk-main-wrapper " id="main-content" role="main">
       <h1 class="govuk-heading-xl">Unique Property Reference Number Finder</h1>
-      <p class="govuk-body-l">Please enter the coordinates of the bounding box below - </p>
-        <div class="govuk-form-group">
-           <label class="govuk-label" for="width-20">
-            Please insert bottom-left coordinates here- 
-           </label>
-          <input class="govuk-input govuk-input--width-20" id="width-20" name="width-20" type="text" placeholder="0.0085, 51.564">
+      <div class="govuk-form-group">
+      <label class="govuk-label" for="sort">
+        Please Select Council
+      </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="select-council">Select Council</option>
+            <option value="Redbridge">Redbridge</option>
+          </select>
         </div>
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="width-20">
-                Please insert top-right coordinates here-     </label>
-            <input class="govuk-input govuk-input--width-20" id="width-20" name="width-20" type="text" placeholder="0.1166, 51.6314">
-          </div>
         <button class="govuk-button" data-module="govuk-button" onclick="location.href='/result'">
           Get results        
         </button>
@@ -104,7 +101,7 @@
     </div>
   </footer>
 
-  <script src="/govuk-frontend/all.js"></script>
+  <script src="/govuk-frontend-4.4.0.min.js"></script>
   <script>
     window.GOVUKFrontend.initAll()
 
