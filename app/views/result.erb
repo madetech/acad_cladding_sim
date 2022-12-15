@@ -66,16 +66,23 @@
     <main class="govuk-main-wrapper " id="main-content" role="main">
       <h1 class="govuk-heading-xl">Search Results</h1>
       <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Total no. of buildings over 18m: <%=uprn_list.length%></caption>
+  <caption class="govuk-table__caption govuk-table__caption--m">Total buildings: <%=uprn_list.length%></caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Unique Property Reference Number</th>
+      <th scope="col" class="govuk-table__header">Height</th>
+      <th scope="col" class="govuk-table__header">Residential Status</th>
+      <th scope="col" class="govuk-table__header">Address</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
   <%uprn_list.each do |uprn|%>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header"><%=uprn%></th>
+      <th scope="row" class="govuk-table__cell">pending</th>
+      <th scope="row" class="govuk-table__cell">pending</th>
+      <th scope="row" class="govuk-table__cell">pending</th>
+
     </tr>
   <%end%>
   </tbody>
