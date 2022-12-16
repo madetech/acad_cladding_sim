@@ -64,19 +64,20 @@
 
   <div class="govuk-width-container ">
     <main class="govuk-main-wrapper " id="main-content" role="main">
-      <h1 class="govuk-heading-xl">Unique Property Reference Number Finder</h1>
+      <h1 class="govuk-heading-xl">Building Identification Service</h1>
       <div class="govuk-form-group">
       <label class="govuk-label" for="sort">
-        Please Select Council
+        Please Select Your Local Authority 
       </label>
-          <select class="govuk-select" id="sort" name="sort">
-            <option value="select-council">Select Council</option>
-            <option value="Redbridge">Redbridge</option>
+      <form action='/result'>
+          <select class="govuk-select" id="sort" name="council_value">
+            <option value="[[0.0085,51.564],[0.1166,51.6314]]">Redbridge</option>
+            <option value="[[3.545237,50.727083],[-3.538381,50.728095]]">Devonshire</option>
+            <option value="[[-3.107175,53.298452],[-3.056940,53.440019]]">Wirral</option> 
           </select>
+          <input class='govuk-button'type='submit' value='Submit'>
+      </form>
         </div>
-        <button class="govuk-button" data-module="govuk-button" onclick="location.href='/result'">
-          Get results        
-        </button>
         </div>
     </main>
   </div>
