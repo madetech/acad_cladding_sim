@@ -19,7 +19,7 @@ def tall_building_toid_finder(left_bottom_coordinates, top_right_coordinates)
 
     parsed_json = JSON.parse(response.body)
     
-    num_of_properties = parsed_json["features"][0]["properties"].length
+    num_of_properties = parsed_json["numberReturned"]
     list_of_building_info = []
     i = 0
     while i < num_of_properties do
