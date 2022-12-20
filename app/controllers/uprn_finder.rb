@@ -5,14 +5,14 @@ require 'openssl'
 require 'json'
 
 # Return the UPRN of buildings using the OS Linked Identifiers API
-def uprn_finder(left_bottom_coordinates, top_right_coordinates)
-  full_list_of_toids = tall_building_toid_finder(left_bottom_coordinates, top_right_coordinates)  # #  returns an array of TOIDs for buildings over 18m within bounding box coordinates using OS NGD API
-  first_100_toids = full_list_of_toids[0..99]
-  list_of_uprns = []  # Stores returned UPRNs
+def uprn_finder()
+  full_list_of_ngd_info = tall_building_finder()  # returns an array of toid, residential status and height for each building over 18m within bounding box coordinates (uses OS NGD API)
+  first_100_buildings_ngd_info = full_list_of_ngd_info[0..99]  # Set number of results to display
+  first_100_buildings_info_with_uprn = []  # Stores returned UPRNs
   
-  # Calls the OS Linked Identifier API on each TOID
-  first_100_toids.each do |toid|
-    url = URI("https://api.os.uk/search/links/v1/identifiers/#{toid[0]}?key=mLoyRCJnzfUA9ViewvB9nUrIE8o0127W")
+  # Calls the OS Linked Identifier API on each toid
+  first_100_buildings_ngd_info.each do |toid_resstatus_height|
+    url = URI("https://api.os.uk/search/links/v1/identifiers/#{toid_resstatus_height[0]}?key=mLoyRCJnzfUA9ViewvB9nUrIE8o0127W")
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
     request = Net::HTTP::Get.new(url)
@@ -23,16 +23,10 @@ def uprn_finder(left_bottom_coordinates, top_right_coordinates)
     begin
       uprn = parsed_json["linkedIdentifiers"][0]["correlations"][0]["correlatedIdentifiers"][0]["identifier"]
     rescue NoMethodError
-      list_of_uprns.append(["UPRN not available", toid])
+      first_100_buildings_info_with_uprn.append(["UPRN not available", toid_resstatus_height])
       next
     end
-    list_of_uprns.append([uprn, toid])
-    # sleep 3
+    first_100_buildings_info_with_uprn.append([uprn, toid_resstatus_height])
   end
-  [list_of_uprns, full_list_of_toids.length.to_s]
+  [first_100_buildings_info_with_uprn, full_list_of_ngd_info.length.to_s]
 end
-
-# def total_num_of_buildings(total_num_of_buidlings)
-#   total_num_of_buidlings = full_list_of_toids.length
-#   total_num_of_buidlings.to_s
-# end

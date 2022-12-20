@@ -13,6 +13,6 @@ get '/' do
 end
 
 get '/result' do
-    $coordinates = params[:council_value]
-    erb :result, {locals: { uprn_list: uprn_finder(params[:council_value[0]], params[:council_value[1]])}}
+    $local_authority_coordinates = params[:bbox_coordinates]
+    erb :result, {locals: { all_buildings_details: uprn_finder()}}
 end
