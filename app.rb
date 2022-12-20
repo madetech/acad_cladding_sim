@@ -9,6 +9,10 @@ configure do
     set :environment, :production
 end
 get '/' do
+    erb :start
+end
+
+get '/select' do
     erb :index
 end
 

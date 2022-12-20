@@ -65,21 +65,31 @@
   <div class="govuk-width-container ">
     <main class="govuk-main-wrapper " id="main-content" role="main">
       <h1 class="govuk-heading-xl">Building Identification Service</h1>
-      <div class="govuk-form-group">
-      <label class="govuk-label" for="sort">
-        Please Select Your Local Authority 
-      </label>
-      <form action='/result'>
-          <select class="govuk-select" id="sort" name="bbox_coordinates">
-            <option value="0.1165,51.564,0.1166,51.6314">Redbridge</option>
-            <option value="0.1265,51.564,0.1266,51.6314">Devon</option>
-            <option value="-3.107175,53.298452,-3.106940,53.340019">Wirral</option> 
-          </select>
-          <p></p>
-          <input class='govuk-button'type='submit' value='Submit'>
-      </form>
-        </div>
-        </div>
+      <div class="govuk-body">
+    
+        <p>Find all buildings within your local authority that meet the requirements for a cladding inspection.</p>
+        <p>This service will give you the following information:</p>
+        <ul>
+        <li> the total number of buildings in your Local Authority that measure over 18m </li>
+        <li> the individual buildings unique property reference number (UPRN)
+        </li>
+        <li>the individual buildings topograpgical ID (TOID)</li>
+        <li>the residential staus of the building</li>
+        <li>the height of the building in metres</li>
+        <li>the address of the building (pending feature)</li>
+        </ul>
+
+        <p>This service is currently under development, if you have any feedback we would love to hear it!</p>
+
+      </div>
+      <a href="/select" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+      Start now
+            <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+      </svg></a>
+
+
+</div>
     </main>
   </div>
 
